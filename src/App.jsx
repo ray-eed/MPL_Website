@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Ugabuga">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
