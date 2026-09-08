@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-cream text-navy;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: #C9A84C; color: #fff; }
+
+/* Scroll-reveal utility */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold shimmer line */
+.gold-line::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #C9A84C;
+  margin-top: 16px;
+}
+
+/* Clip-path for diagonal sections */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+/* Nav blur */
+.nav-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Underline slide effect */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C9A84C;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Counter numbers */
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
+
+/* Luxury card */
+.luxury-card {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.luxury-card:hover {
+  box-shadow: 0 24px 60px rgba(10, 35, 66, 0.12);
+  transform: translateY(-6px);
+}
